@@ -1,0 +1,295 @@
+% !Mode:: "TeX:UTF-8"
+
+% !TEX program = pdflatex
+% !BIB program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage[notcite,notref]{showkeys}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{cancel}
+\renewcommand{\familydefault}{bch}
+
+\usepackage{graphicx}
+\usepackage[mathscr]{eucal}
+
+
+\graphicspath{ {../figz/} }
+
+
+\usepackage{hyperref}
+\hypersetup{
+	hyperindex,
+	breaklinks,
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=magenta,
+%	allcolors=black,
+	bookmarks=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	pdfstartpage={1},
+	pdfstartview={FitH},
+	pdfview={FitH 0},%pdfstartview=FitH,pdfview=FitH,%pdfstartview={XYZ null null 1},
+	pdfauthor={N. C. Constantinou and W. R. Young},
+	pdftitle={Spinup solutions},
+ }
+%\nofiles
+%\expandafter\ifx\csname package@font\endcsname\relax\else
+% \expandafter\expandafter
+% \expandafter\usepackage
+% \expandafter\expandafter
+% \expandafter{\csname package@font\endcsname}%
+%\fi
+% \usepackage[all]{hypcap}	%do not use with amestoc single column
+\usepackage{doi}
+
+
+\bibliographystyle{plainnat}
+
+%% For lucida bright
+%\usepackage[T1]{fontenc}
+%\usepackage{lucidabr}
+\usepackage{bm}
+%%%
+\usepackage{mdframed}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{epsfig}
+\usepackage[mathscr]{eucal}
+
+\usepackage{comment}
+
+
+
+
+%% A nice definition
+\newcommand{\defn}{\ensuremath{\stackrel{\mathrm{def}}{=}}}
+
+%% heat flux
+\newcommand{\FI}{\mathcal{F}_{\text{int}}}
+\newcommand{\Ftot}{\mathcal{F}_{\text{tot}}}
+%%%%%%%%% %%%%
+
+
+\newcommand{\dd}{\mathrm{d}}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ii{{\rm i}}
+\def\ee{{\rm e}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%Coriolis parameter
+\newcommand{\f}{f_0}
+%%Eliassen-Palm vector
+\newcommand{\E}{\boldsymbol{E}}
+\newcommand{\EP}{\boldsymbol{E \!\! P}}
+%% ageostrophic circulation
+\newcommand{\va}{\bar v}
+\newcommand{\wa}{\bar w}
+
+\newcommand{\hb}{h_{\mathrm{b}}}
+
+%% hyperdiffusion
+\newcommand{\D}{ \mathsf{D} }
+\newcommand{\bdia}{ \stackrel{\circ}{b} }
+\newcommand{\vthdia}{ \stackrel{\circ}{\vartheta} }
+
+\newcommand{\px}{\partial_x}
+\newcommand{\py}{\partial_y}
+\newcommand{\pz}{\partial_z}
+\newcommand{\pt}{\partial_t}
+
+% overturning streamfunction and residual streamfunction
+\newcommand{\ch}{\chi}
+\newcommand{\chs}{\chi^{\star}}
+\newcommand{\vs}{v^\star}
+\newcommand{\ws}{w^\star}
+\newcommand{\phis}{\phi^\star}
+
+%vartheta as a buoyancy variable
+\newcommand{\vth}{\vartheta}
+%\newcommand{\vth}{\tfrac{\f^2}{N^2}\psi_z}
+\newcommand{\vthb}{\bar \vartheta}
+%\newcommand{\vthb}{\tfrac{\f^2}{N^2}\bar \psi_z}
+
+
+%zonal mean psi
+\newcommand{\pb}{\bar \psi}
+
+%
+\newcommand{\bur}{\tfrac{f_0^2}{N^2}}
+\newcommand{\ibur}{\tfrac{N^2}{f_0^2}}
+
+\def\Ek{\mathrm{Ek}}
+
+% punctuation
+\newcommand{\com}{\, ,}
+\newcommand{\per}{\, .}
+\newcommand{\andd}{\qquad \text{and} \qquad}
+
+%boldsymbols
+\newcommand{\bE}{\boldsymbol{E}}
+
+%Ekman
+\newcommand{\delE}{\delta_{\mathrm{E}}}
+\newcommand{\QE}{\mathcal{Q}_{\mathrm{E}}}
+
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+%stratification parameters
+\newcommand{\elldef}{\ell}
+\newcommand{\kdef}{\kappa}
+
+%save typing some common greek letters
+\newcommand{\p}{\psi}
+\newcommand{\h}{\eta}
+\newcommand{\ao}{\alpha_1}
+\newcommand{\at}{\alpha_2}
+
+\renewcommand{\ao}{F_2}
+\renewcommand{\at}{F_1}
+
+%fractions
+\newcommand{\half}{\tfrac{1}{2}}
+
+%vector analysis
+\newcommand{\cross}{\times}
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\bnabla}{\boldsymbol{\nabla}}
+\newcommand{\gradH}{\bnablaH}
+\newcommand{\curl}{\boldsymbol{\nabla} \!\times\!}
+\newcommand{\bcdot}{ \boldsymbol{\cdot} }
+\renewcommand{\div}{\boldsymbol{\nabla} \!\bcdot\!}
+\newcommand{\lap}{\triangle}
+%\newcommand{\lap}{\nabla^2}
+\newcommand{\ddxi}{\left(\bxt\!\bcdot \!\grad\right)\!}
+\newcommand{\ddu}{\left(\bu\!\bcdot \!\grad\right)\!}
+
+
+\newcommand{\eye}{\boldsymbol{\hat x}}
+\newcommand{\jay}{\boldsymbol{\hat y}}
+\newcommand{\kay}{\boldsymbol{\hat z}}
+
+
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\bq}{\boldsymbol{q}}
+\newcommand{\bpsi}{\boldsymbol{\psi}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bG}{\boldsymbol{\mathcal{G}}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\ba}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bc}{\boldsymbol{c}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bk}{\boldsymbol{k}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\J}{\mathsf{J}}
+\renewcommand{\L}{\mathsf{L}}
+\newcommand{\sL}{\mathsf{L}}
+
+\newcommand{\psibt}{\bar{\psi}}
+\newcommand{\psibc}{\bar{\theta}}
+\newcommand{\ubt}{\bar{u}}
+\newcommand{\ubc}{\bar{v}}
+\newcommand{\taus}{\tau^{\mathrm{s}}}
+
+\newcommand{\bphi}{\boldsymbol{\phi}}
+
+
+\begin{document}
+
+
+\title{Baroclinic instability with topography}
+
+\author{
+Navid \thanks {Scripps Institution of Oceanography,
+University of California at San Diego, La Jolla, CA
+92093--0230, USA.~email:~\href{mailto:navid@ucsd.edu}{navid@ucsd.edu}.
+} \qquad Bill \andd Joe}
+
+
+\maketitle
+
+\begin{abstract}
+	We study the effect of bottom topography on the vertical mode structure in a two-layer quasigeostrophic model.
+\end{abstract}
+
+
+\section{The $2$-layer case}
+
+Consider a two layer fluid. The fluid's resting heights are $H_1$ and $H_2$. The total fluid depth is $H-h(x,y)$, where $H\defn H_1+H_2$.  The QGPV equations for each layer are:\begin{subequations}
+\begin{gather}
+	q_{1t} + \J(\psi_1, q_1) + \beta \psi_{1x} = 0\com\label{eq:q1t} \\
+	q_{2t} + \J(\psi_2, q_2 + \underbrace{\frac{f_0 h}{H_2}}_{\defn \h}) + \beta \psi_{2x} = 0\com\label{eq:q2t} 
+\end{gather}\end{subequations}
+with\begin{subequations}
+\begin{gather}
+	q_{1} \defn \lap\psi_1 + \at (\psi_2-\psi_1) \com\label{eq:q1def} \\
+	q_{2} \defn \lap\psi_2 + \ao (\psi_1-\psi_2) \com\label{eq:q2def} 
+\end{gather}\end{subequations}
+
+Now assume that there is a zonal mean flow $U_j(y)$ in each layer, i.e.,~$\psi_j\mapsto \psi_j - \int^y U_j(y')\,\dd y'$. This implies:\begin{subequations}
+\begin{align}
+	q_1 &\mapsto q_1 - U_{1y} + \at\int^{y} \big[U_2(y')-U_1(y')\big]\,\dd y' \com\\
+	q_1 &\mapsto q_2 - U_{2y} - \ao\int^{y} \big[U_1(y')-U_2(y')\big]\,\dd y'\com
+\end{align}\end{subequations}
+and the EOM become:\begin{subequations}
+\begin{gather}
+	q_{1t} + U_1 q_{1x} + \J(\psi_1, q_1) + \big[ \beta-U_{1yy} - \at (U_2-U_1)\big]\psi_{1x} = 0\com\label{eq:Uq1t} \\
+	q_{2t} + U_2 (q_{2x} + \h_x) + \J(\psi_2, q_2 +  \h) + \big[\beta -U_{2yy} - \ao(U_1-U_2)\big] \psi_{2x} = 0\per\label{eq:Uq2t} 
+\end{gather}\end{subequations}
+After linearizing:\begin{subequations}
+\begin{gather}
+	q_{1t} + U_1 q_{1x} + \big[ \beta-U_{1yy} - \at (U_2-U_1)\big]\psi_{1x} = 0\com\label{eq:linUq1t} \\
+	q_{2t} + U_2 (q_{2x} + \h_x) + \J(\psi_2, \h) + \big[\beta-U_{2yy}  - \ao(U_1-U_2)\big] \psi_{2x} = 0\per\label{eq:linUq2t} 
+\end{gather}\label{eqs:lin2layer}\end{subequations}
+
+\subsection*{Parameters}
+
+\noindent Domain size: $L_x=L_y=2$\\
+$F_1=25$, $F_2=25/4$, $\beta=0$\\
+$U_1(y) = \mathrm{sech}{(5y)}^2$, $U_2(y)=0$\\
+$\h = 10\cos{(10\pi x)}\cos{(10\pi y)}$ 
+
+\vspace{1em}
+
+We want to study the stability of the imposed $U(y)$ with topography. The idea is that you start with some random, small-amplitude $q_1, q_2$ and then you either \emph{(i)}~integrate forward the linearized equation until the most unstable mode pops up or \emph{(ii)}~you integrate forward the nonlinear equations but every some prescribed $\Delta t$ you rescale $q_1, q_2$ so that they remain small-amplitude and nonlinear terms won't matter much.
+
+The two methods should give the same results.
+
+You can also compute the growth rate by looking how much the energy of, e.g., $q_1$ grows for time $\Delta t$ as:
+\begin{equation}
+\textrm{growth rate}_j = \dfrac{\log{\left(\dfrac{\textrm{KE after $\Delta t$}}{\textrm{KE initially}}\right)}}{2\Delta t}
+\end{equation}
+
+As the structure of $q_1,q_2$ converges to the unstable mode the value of $\textrm{growth rate}_j$ will converge to the corresponding growth rate.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{ametsoc2014}
+\bibliography{../bibfile/basic_references}
+
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%
